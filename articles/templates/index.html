@@ -1,0 +1,27 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    Articles Page 2
+{% endblock %}
+
+{% block content %}
+    <h2>{{ title }} : </h2>
+    <ul>
+            {% for article in articles %}
+                <li><a href="{% url 'article' article.id %}">{{ article.title }}</a></li>
+            {% empty %}
+                <li>No Articles are available</li>
+            {% endfor %}    
+        </ul>
+  
+
+    {% comment %} {% firstof var1 var2 var3 'hello roocket'%} {% endcomment %}
+
+    {{ mydata | floatformat:0  }}
+
+
+
+    {# 'My Text' #}
+    {# Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi reiciendis quibusdam aut pariatur doloribus modi ipsa aliquam repellendus, dolor facere, debitis sed ullam, eum nostrum ab ut a itaque consequatur!</p> #}
+
+{% endblock %}
